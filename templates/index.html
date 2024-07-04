@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Top Keywords</title>
+</head>
+<body>
+    <h1>Top 3 Keywords</h1>
+    <ul>
+        {% for keyword in top_keywords %}
+            <li>{{ keyword.keyword }} ({{ keyword.keyword_count }} times)</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Add a Keyword</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Add Keyword</button>
+    </form>
+</body>
+</html>
